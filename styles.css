@@ -1,0 +1,999 @@
+/* Import Poppins Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #161616;
+    --text-color: #ffffff;
+    --main-color: #b74b4b; /* Crimson Red Accent */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Header & Navbar styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 7%; /* Reduced padding slightly to give the navbar more room */
+    background: rgba(22, 22, 22, 0.95); /* Slight translucent background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-left: auto; /* Automatically pushes the navbar strictly to the right side of the header */
+}
+
+.navbar a {
+    font-size: 1.3rem; /* Reduced from 1.5rem to shrink the menu width */
+    color: var(--text-color);
+    margin-left: 1.6rem; /* Reduced spacing so the links do not sit next to the logo */
+    font-weight: 500;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.5rem;
+    white-space: nowrap;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
+}
+
+/* Home Section Layout */
+.home {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+/* Image with Circular Frame & Red Border Effects */
+.home-img {
+    width: 42vw;
+    height: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.25rem solid var(--main-color);
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.home-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main Content Text */
+.home-content h3 {
+    font-size: 2.5rem; /* Sized down slightly from 3.2rem */
+    font-weight: 700;
+}
+
+.home-content h3 span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 4.2rem; /* Sized down from 5.6rem to fit your major "Bachelor of Science..." */
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h1 span {
+    color: var(--main-color);
+    border-right: 3px solid var(--main-color);
+    padding-right: 5px;
+    animation: blinkCursor 0.8s infinite alternate;
+}
+
+.home-content p {
+    font-size: 1.5rem; /* Sized down slightly from 1.6rem for improved hierarchy */
+    font-weight: 400;
+    margin: 1.5rem 0 2.5rem;
+    line-height: 1.6;
+}
+
+/* Social Media Circular Buttons with Hover Glow */
+.social-icons {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* Hire Me Button */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+    transform: scale(1.05);
+}
+
+/* Text Cursor Animation */
+@keyframes blinkCursor {
+    from { border-color: transparent }
+    to { border-color: var(--main-color) }
+}
+
+/* Responsive Media Queries (Mobile & Tablet) */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header {
+        padding: 2rem 4%;
+        background: rgba(22, 22, 22, 0.95);
+    }
+    
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 40%;
+        min-height: 100vh;
+        background: var(--bg-color);
+        border-left: 3px solid var(--main-color);
+        padding: 3rem 4%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .home {
+        flex-direction: column; /* Changed from column-reverse to put your picture on top */
+        gap: 3rem;
+        padding-top: 12rem; /* Sized down to look clean on mobile */
+        text-align: center; /* Centers layout text on mobile view */
+    }
+
+    .home-img {
+        width: 55vw; /* Adjusted from 70vw to fit cleanly on smartphones */
+        height: 55vw;
+        margin: 0 auto; /* Centers the profile photo below the logo */
+    }
+
+    /* Fixed mobile font sizes so they aren't overly massive */
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.2rem; /* Fits your long major "Bachelor of Science..." */
+    }
+
+    .home-content p {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 2rem;
+    }
+
+    .social-icons {
+        justify-content: center; /* Center-aligns icon tray on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+    .home-img {
+        width: 65vw; /* Sized down slightly for small devices */
+        height: 65vw;
+    }
+}
+
+/* Sticky class added by JS on scroll */
+.header.sticky {
+    background: var(--bg-color);
+    border-bottom: 2px solid var(--main-color);
+    padding: 1.5rem 9%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================
+   About Me Section Styling
+   ========================================== */
+.about {
+    /* Removed min-height: 100vh to stop the section from stretching too big */
+    padding: 12rem 9% 8rem; /* 12rem at the top gives breathing room below the header */
+    background: #111111; /* Slightly darker than home background for contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+.about-container {
+    max-width: 1000px;
+    background: #1a1a1a;
+    padding: 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px rgba(183, 75, 75, 0.15);
+    border: 1px solid rgba(183, 75, 75, 0.2);
+}
+
+.about-content h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.about-content h3 span {
+    color: var(--main-color);
+}
+
+.about-content .nickname {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.about-content p em {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.about-content p strong {
+    color: #ffffff;
+}
+
+.about-buttons {
+    margin-top: 3rem;
+}
+
+/* ==========================================
+   Skills Section Styling
+   ========================================== */
+.skills {
+    padding: 10rem 9% 8rem;
+    background: var(--bg-color); /* Matches the main home background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+.skill-box {
+    background: #1a1a1a;
+    padding: 3.5rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(183, 75, 75, 0.2);
+    text-align: center;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.skill-box i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.skill-box h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.skill-box p {
+    font-size: 1.3rem;
+    color: #a0a0a0;
+    line-height: 1.4;
+}
+
+/* Glow and slide-up animations on hover */
+.skill-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--main-color);
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.3);
+}
+
+.skill-box:hover i {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px var(--main-color);
+}
+
+/* ==========================================
+   Projects Section Styling
+   ========================================== */
+.projects {
+    padding: 10rem 9% 8rem;
+    background: #111111; /* Slightly darker than home background for alternating contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: #1a1a1a;
+    border-radius: 2rem;
+    border: 1px solid rgba(183, 75, 75, 0.1);
+    overflow: hidden;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Landscape thumbnail wrapper */
+.project-img-box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(183, 75, 75, 0.2);
+}
+
+.project-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.project-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Badges for the technologies utilized */
+.project-tags {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--main-color);
+    background: rgba(183, 75, 75, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(183, 75, 75, 0.2);
+}
+
+.project-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.project-content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #d0d0d0;
+    margin-bottom: 2.5rem;
+    flex: 1; /* Pushes action buttons to align neatly at the bottom of cards */
+}
+
+/* Action button links */
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.project-links a {
+    font-size: 2rem;
+    color: var(--main-color);
+    transition: 0.3s ease;
+}
+
+.project-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--main-color);
+}
+
+/* Hover effects for project cards */
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--main-color);
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.25);
+}
+
+.project-card:hover .project-img-box img {
+    transform: scale(1.08); /* Zooms inside the thumbnail box on card hover */
+}
+
+/* ==========================================
+   Education Timeline Section Styling
+   ========================================== */
+.education {
+    padding: 10rem 9% 8rem;
+    background: var(--bg-color); /* Changed from #111111 to preserve the alternating pattern */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.education-timeline {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin-top: 2rem;
+    padding-left: 3rem;
+    border-left: 2px solid var(--main-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -3.85rem; /* Centers the dot exactly over the vertical line */
+    top: 0.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    transition: 0.3s ease;
+}
+
+.timeline-date {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin-bottom: 0.8rem;
+}
+
+/* Updated: Two-column card container */
+.timeline-content {
+    background: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(183, 75, 75, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Spacing between the picture and the text description */
+    transition: 0.4s ease;
+}
+
+/* Image container (Sized up from 150px to 200px) */
+.timeline-img-box {
+    width: 200px; 
+    height: 300px;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 2px solid rgba(183, 75, 75, 0.3);
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.timeline-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image nicely inside the box */
+}
+
+.timeline-text {
+    flex: 1;
+}
+
+.timeline-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.timeline-content .degree {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.timeline-content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #d0d0d0;
+}
+
+/* Timeline Hover Animations */
+.timeline-item:hover .timeline-content {
+    transform: translateX(10px); /* Slides the card slightly on hover */
+    border-color: var(--main-color);
+    box-shadow: 0 0 20px rgba(183, 75, 75, 0.25);
+}
+
+.timeline-item:hover .timeline-dot {
+    background: #ffffff;
+    box-shadow: 0 0 15px #ffffff;
+    transform: scale(1.3);
+}
+
+/* --- Mobile Responsiveness for Education Cards --- */
+@media (max-width: 768px) {
+    .timeline-content {
+        flex-direction: column; /* Stacks the image on top of the text inside the card */
+        align-items: center;
+        text-align: center;
+    }
+
+    .timeline-img-box {
+        width: 100%; /* Expands the image container to fill width on mobile */
+        height: 180px; /* Gives it a landscape header appearance */
+    }
+}
+
+/* ==========================================
+   Certificate Section Styling
+   ========================================== */
+.certificate {
+    padding: 10rem 9% 8rem;
+    background: var(--bg-color); /* Matches the dark gray home background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+.certificate-card {
+    background: #1a1a1a;
+    border-radius: 2rem;
+    border: 1px solid rgba(183, 75, 75, 0.1);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    transition: 0.4s ease;
+}
+
+/* Certificate image container */
+.certificate-img-box {
+    width: 350px;
+    height: 250px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 2px solid rgba(183, 75, 75, 0.3);
+    flex-shrink: 0;
+}
+
+.certificate-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the certificate document scales without cropping */
+    background: #111111; /* Matte black background behind the document */
+    transition: 0.5s ease;
+}
+
+.certificate-content {
+    flex: 1;
+}
+
+/* Red-accented award badge */
+.certificate-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--main-color);
+    background: rgba(183, 75, 75, 0.1);
+    padding: 0.6rem 1.5rem;
+    border-radius: 3rem;
+    border: 1px solid rgba(183, 75, 75, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.certificate-badge i {
+    font-size: 1.6rem;
+}
+
+.certificate-card h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.cert-meta {
+    font-size: 1.4rem;
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.cert-meta strong {
+    color: #ffffff;
+}
+
+.cert-description {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #d0d0d0;
+}
+
+/* Certificate Card Hover Effects */
+.certificate-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.25);
+}
+
+.certificate-card:hover .certificate-img-box img {
+    transform: scale(1.05); /* Slight zoom on document hover */
+}
+
+/* --- Mobile Responsiveness for Certificate Cards --- */
+@media (max-width: 768px) {
+    .certificate-card {
+        flex-direction: column; /* Stacks the image on top on mobile */
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .certificate-img-box {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3; /* Maintains standard certificate proportions on mobile */
+    }
+
+    .certificate-badge {
+        justify-content: center;
+    }
+}
+
+
+/* ==========================================
+   Hobby Section Styling (Compact & Large Images)
+   ========================================== */
+.hobby {
+    padding: 10rem 9% 8rem;
+    background: var(--bg-color); /* Matches the dark gray home background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobby-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Sized down column width to shrink cards */
+    gap: 2.5rem; /* Tighter gap between the three main cards */
+    width: 100%;
+    max-width: 950px; /* Reduced from 1100px to make the overall layout more compact */
+    margin-top: 2rem;
+}
+
+.hobby-box {
+    background: #1a1a1a;
+    padding: 2.5rem 1.5rem; /* Sized down padding to remove excess empty space */
+    border-radius: 2rem;
+    border: 1px solid rgba(183, 75, 75, 0.1);
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.hobby-box i {
+    font-size: 3.5rem; /* Sized down from 4.5rem to shrink card height */
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    transition: 0.3s ease;
+}
+
+.hobby-box h3 {
+    font-size: 1.8rem; /* Sized down from 2.2rem */
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    color: #ffffff;
+}
+
+/* Inner Grid for individual items */
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.2rem; /* Reduced from 1.8rem to give the image boxes more physical space */
+}
+
+.hobby-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Tightened gap so text doesn't push the image up */
+    cursor: pointer;
+}
+
+/* Individual item image container (Portrait Aspect Ratio) */
+.hobby-item-img {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Changed from 16/10 to 3/4 to make the photos vertical/portrait */
+    border-radius: 0.8rem;
+    overflow: hidden;
+    border: 1.5px solid rgba(183, 75, 75, 0.15);
+    transition: 0.3s ease;
+}
+
+.hobby-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.hobby-item h4 {
+    font-size: 1.15rem; /* Sized down slightly so the text fits cleanly on one line */
+    font-weight: 500;
+    color: #d0d0d0;
+    line-height: 1.3;
+    transition: 0.3s ease;
+}
+
+/* Card Glow Effect on Hover */
+.hobby-box:hover {
+    border-color: rgba(183, 75, 75, 0.3);
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.15);
+}
+
+/* Individual Item Hover Effects (Glow and Zoom) */
+.hobby-item:hover .hobby-item-img {
+    border-color: var(--main-color);
+    box-shadow: 0 0 12px rgba(183, 75, 75, 0.4);
+}
+
+.hobby-item:hover .hobby-item-img img {
+    transform: scale(1.1);
+}
+
+.hobby-item:hover h4 {
+    color: var(--main-color);
+}
+
+/* ==========================================
+   Contact Section Styling
+   ========================================== */
+.contact {
+    padding: 10rem 9% 8rem;
+    background: #111111; /* Slightly darker than home background for contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Big expansive columns */
+    gap: 3rem;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: #1a1a1a;
+    padding: 4.5rem 3rem; /* Tall padding to make the cards look big and clean */
+    border-radius: 2rem;
+    border: 1px solid rgba(183, 75, 75, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    transition: 0.4s ease;
+}
+
+.contact-card i {
+    font-size: 6rem; /* Huge, highly visible social icons */
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    transition: 0.3s ease;
+}
+
+.contact-card h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.contact-card p {
+    font-size: 1.5rem;
+    color: #a0a0a0;
+    margin-bottom: 3rem;
+    word-break: break-all; /* Prevents long emails from overflowing the card borders */
+}
+
+.contact-btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: 0.3s ease;
+}
+
+.contact-btn i {
+    font-size: 1.4rem;
+    margin-bottom: 0; /* Resets the margins for the tiny button arrow */
+    transition: 0.3s ease;
+}
+
+/* Card Hover States */
+.contact-card:hover {
+    transform: translateY(-10px); /* Lifts the card slightly */
+    border-color: var(--main-color);
+    box-shadow: 0 0 30px rgba(183, 75, 75, 0.3);
+}
+
+.contact-card:hover i {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px var(--main-color);
+}
+
+/* Slides the small arrow slightly to the right on hover */
+.contact-card:hover .contact-btn i {
+    transform: translateX(5px);
+}
+
+.contact-card:hover .contact-btn {
+    color: #ffffff;
+}
